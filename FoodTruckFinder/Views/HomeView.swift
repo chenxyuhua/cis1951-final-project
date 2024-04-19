@@ -57,7 +57,7 @@ struct HomeView: View {
             }
             .ignoresSafeArea()
             .onAppear {
-                viewModel.loadFoodTrucks()
+                //viewModel.loadFoodTrucks()
             }
         }
     }
