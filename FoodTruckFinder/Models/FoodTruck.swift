@@ -20,6 +20,16 @@ struct FoodTruck: Identifiable, Codable {
     enum CodingKeys: String, CodingKey {
         case id, name, latitude, longitude, hours, averagePrice, category, isFavorite
     }
+    
+    // Added initializer because there was none for initializing a test food truck
+    init(name: String, location: CLLocation, hours: String, averagePrice: Double, category: String, isFavorite: Bool) {
+        self.name = name
+        self.location = location
+        self.hours = hours
+        self.averagePrice = averagePrice
+        self.category = category
+        self.isFavorite = isFavorite
+    }
 
     // Initializer from Decoder
     init(from decoder: Decoder) throws {
