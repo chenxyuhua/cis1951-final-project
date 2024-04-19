@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 struct FoodTruck: Identifiable, Codable {
-    var id: UUID = UUID()
+    var id: UUID
     var name: String
     var location: CLLocation
     var hours: String
@@ -17,11 +17,21 @@ struct FoodTruck: Identifiable, Codable {
     var category: String
     var isFavorite: Bool
 
+    // Add a manual initializer for easier creation
+    init(id: UUID = UUID(), name: String, location: CLLocation, hours: String, averagePrice: Double, category: String, isFavorite: Bool) {
+        self.id = id
+        self.name = name
+        self.location = location
+        self.hours = hours
+        self.averagePrice = averagePrice
+        self.category = category
+        self.isFavorite = isFavorite
+    }
+
     enum CodingKeys: String, CodingKey {
         case id, name, latitude, longitude, hours, averagePrice, category, isFavorite
     }
 
-    // Initializer from Decoder
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
@@ -35,7 +45,6 @@ struct FoodTruck: Identifiable, Codable {
         isFavorite = try container.decode(Bool.self, forKey: .isFavorite)
     }
 
-    // Encode function to Encoder
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
