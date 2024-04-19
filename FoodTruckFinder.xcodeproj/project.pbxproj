@@ -17,6 +17,7 @@
 		BC4A82052BCCCA3300EA7233 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A82042BCCCA3300EA7233 /* CreateView.swift */; };
 		BC4A82072BCCCA6000EA7233 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A82062BCCCA6000EA7233 /* FavoritesView.swift */; };
 		BC4A82092BCCCA8B00EA7233 /* FoodTruckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A82082BCCCA8B00EA7233 /* FoodTruckViewModel.swift */; };
+		BC6A4AE62BD2E64C00D2F940 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A4AE52BD2E64C00D2F940 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BC4A82042BCCCA3300EA7233 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		BC4A82062BCCCA6000EA7233 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		BC4A82082BCCCA8B00EA7233 /* FoodTruckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckViewModel.swift; sourceTree = "<group>"; };
+		BC6A4AE52BD2E64C00D2F940 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				BC4A81FA2BCCC58200EA7233 /* Models */,
 				BC4A81F92BCCC57900EA7233 /* Views */,
 				BC4A81EB2BCCC4A400EA7233 /* FoodTruckFinderApp.swift */,
+				BC6A4AE52BD2E64C00D2F940 /* LocationManager.swift */,
 				BC4A81EF2BCCC4A500EA7233 /* Assets.xcassets */,
 				BC4A81F12BCCC4A500EA7233 /* Preview Content */,
 			);
@@ -187,6 +190,7 @@
 				BC4A82072BCCCA6000EA7233 /* FavoritesView.swift in Sources */,
 				BC4A82052BCCCA3300EA7233 /* CreateView.swift in Sources */,
 				BC4A81FD2BCCC98A00EA7233 /* FoodTruck.swift in Sources */,
+				BC6A4AE62BD2E64C00D2F940 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
