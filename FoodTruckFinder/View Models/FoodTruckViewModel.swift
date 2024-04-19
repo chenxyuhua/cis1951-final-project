@@ -12,13 +12,9 @@ import CoreLocation
 
 class FoodTruckViewModel: ObservableObject {
     @Published var foodTrucks: [FoodTruck] = []
-    @Published var favorites: [FoodTruck] = []
 
     func addFoodTruck(_ truck: FoodTruck) {
         foodTrucks.append(truck)
-        if truck.isFavorite {
-            favorites.append(truck)
-        }
         saveFoodTrucks()
     }
 
@@ -51,8 +47,8 @@ class FoodTruckViewModel: ObservableObject {
     
     func toggleFavorite(_ truck: FoodTruck) {
         if let index = foodTrucks.firstIndex(where: { $0.id == truck.id }) {
-            foodTrucks[index].isFavorite.toggle()
-            saveFoodTrucks()
+                    foodTrucks[index].isFavorite.toggle()
+                    saveFoodTrucks()
+                }
         }
-    }
 }

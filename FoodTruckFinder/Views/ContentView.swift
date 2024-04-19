@@ -28,10 +28,10 @@ struct ContentView: View {
                     Label("Search", systemImage: "magnifyingglass")
                 }
         
-            FavoritesView()
-                .tabItem {
-                    Label("Favorites", systemImage: "star.fill")
-                }
+            FavoritesView(viewModel: foodTruckViewModel)
+                            .tabItem {
+                                Label("Favorites", systemImage: "star.fill")
+                            }
             
             CreateView(viewModel: foodTruckViewModel, locationService: locationManager)
                 .tabItem {

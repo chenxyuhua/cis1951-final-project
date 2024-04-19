@@ -13,24 +13,27 @@ struct FoodTruckListView: View {
     @Binding var searchText: String
     var userLocation: CLLocation?
 
-    var filteredFoodTrucks: [FoodTruck] {
-        viewModel.foodTrucks.filter { truck in
+    var filteredAndSortedFoodTrucks: [FoodTruck] {
+        let filteredTrucks = viewModel.foodTrucks.filter { truck in
             searchText.isEmpty || truck.name.localizedCaseInsensitiveContains(searchText)
-        }.sorted {
-            // If userLocation is available, sort by proximity
-            if let userLocation = userLocation {
-                return $0.location.distance(from: userLocation) < $1.location.distance(from: userLocation)
+        }
+        
+        if let userLocation = userLocation {
+            return filteredTrucks.sorted {
+                $0.location.distance(from: userLocation) < $1.location.distance(from: userLocation)
             }
-            return false
+        } else {
+            return filteredTrucks
         }
     }
 
     var body: some View {
-        List(filteredFoodTrucks) { truck in
+        List(filteredAndSortedFoodTrucks) { truck in
             FoodTruckRow(viewModel: viewModel, truck: truck)
         }
     }
 }
+
 
 struct FoodTruckListView_Previews: PreviewProvider {
     static var previews: some View {
@@ -45,7 +48,6 @@ struct FoodTruckListView_Previews: PreviewProvider {
                 category: "Japanese Cuisine",
                 isFavorite: true
             ),
-            // Add more FoodTruck instances if needed
         ]
 
         let searchText = Binding.constant("")

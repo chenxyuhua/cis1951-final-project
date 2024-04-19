@@ -16,12 +16,12 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         super.init()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization() // Request permission
-        self.locationManager.startUpdatingLocation() // Start location updates
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.first // Update your published location
+        location = locations.first
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

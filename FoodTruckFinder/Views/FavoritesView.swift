@@ -9,11 +9,11 @@ import SwiftUI
 import CoreLocation
 
 struct FavoritesView: View {
-    @ObservedObject var viewModel = FoodTruckViewModel()
+    @ObservedObject var viewModel: FoodTruckViewModel
 
     var body: some View {
         NavigationView {
-            List(viewModel.favorites) { truck in
+            List(viewModel.foodTrucks.filter { $0.isFavorite }) { truck in
                 FoodTruckRow(viewModel: viewModel, truck: truck)
             }
             .navigationTitle("My Favorites")
@@ -26,7 +26,9 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
+        // Create an instance of FoodTruckViewModel
         let viewModel = FoodTruckViewModel()
+        // Populate it with sample data
         viewModel.foodTrucks = [
             FoodTruck(
                 id: UUID(),
@@ -47,8 +49,9 @@ struct FavoritesView_Previews: PreviewProvider {
                 isFavorite: true
             )
         ]
-
-        return FavoritesView()
+        
+        // Pass the instance, not the type
+        return FavoritesView(viewModel: viewModel)
             .environmentObject(viewModel)
     }
 }
