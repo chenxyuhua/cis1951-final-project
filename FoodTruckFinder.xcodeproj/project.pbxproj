@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		160F5AD92BD2EC6A00CC0253 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F5AD82BD2EC6A00CC0253 /* ContentView.swift */; };
+		160F5ADB2BD309C700CC0253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F5ADA2BD309C700CC0253 /* ViewController.swift */; };
 		94856A132BD2BCFE00C7977F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94856A122BD2BCFE00C7977F /* LocationManager.swift */; };
 		94856A172BD2BDBB00C7977F /* FoodTruckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94856A162BD2BDBB00C7977F /* FoodTruckListView.swift */; };
 		94856A192BD2BE3900C7977F /* FoodTruckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94856A182BD2BE3900C7977F /* FoodTruckRow.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		160F5AD82BD2EC6A00CC0253 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		160F5ADA2BD309C700CC0253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		94856A122BD2BCFE00C7977F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		94856A162BD2BDBB00C7977F /* FoodTruckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckListView.swift; sourceTree = "<group>"; };
 		94856A182BD2BE3900C7977F /* FoodTruckRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckRow.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				BC4A81F92BCCC57900EA7233 /* Views */,
 				BC4A81EB2BCCC4A400EA7233 /* FoodTruckFinderApp.swift */,
 				94856A122BD2BCFE00C7977F /* LocationManager.swift */,
+				160F5ADA2BD309C700CC0253 /* ViewController.swift */,
 				BC4A81EF2BCCC4A500EA7233 /* Assets.xcassets */,
 				BC4A81F12BCCC4A500EA7233 /* Preview Content */,
 			);
@@ -199,6 +202,7 @@
 				BC4A82012BCCC9EA00EA7233 /* FoodTruckView.swift in Sources */,
 				160F5AD92BD2EC6A00CC0253 /* ContentView.swift in Sources */,
 				BC4A82072BCCCA6000EA7233 /* FavoritesView.swift in Sources */,
+				160F5ADB2BD309C700CC0253 /* ViewController.swift in Sources */,
 				BC4A82052BCCCA3300EA7233 /* CreateView.swift in Sources */,
 				BC4A81FD2BCCC98A00EA7233 /* FoodTruck.swift in Sources */,
 				94856A132BD2BCFE00C7977F /* LocationManager.swift in Sources */,
@@ -336,8 +340,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckFinder/Preview Content\"";
+				DEVELOPMENT_TEAM = 76ZZ4QH46R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We will use your location data to show you the nearest food trucks to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -365,8 +371,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckFinder/Preview Content\"";
+				DEVELOPMENT_TEAM = 76ZZ4QH46R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We will use your location data to show you the nearest food trucks to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
