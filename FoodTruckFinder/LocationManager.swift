@@ -2,7 +2,7 @@
 //  LocationManager.swift
 //  FoodTruckFinder
 //
-//  Created by 陈昱桦 on 4/19/24.
+//  Created by Emily Yu on 4/19/24.
 //
 
 import Foundation
