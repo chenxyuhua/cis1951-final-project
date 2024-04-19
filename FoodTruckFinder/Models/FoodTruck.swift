@@ -8,18 +8,43 @@
 import Foundation
 import CoreLocation
 
-struct FoodTruck {
-    let name: String
-    let location: CLLocationCoordinate2D
-    let hours: String
-    let cuisine: String
-    let avgPrice: Double?
+struct FoodTruck: Identifiable, Codable {
+    var id: UUID = UUID()
+    var name: String
+    var location: CLLocation
+    var hours: String
+    var averagePrice: Double
+    var category: String
+    var isFavorite: Bool
 
-    init(name: String, location: CLLocationCoordinate2D, hours: String, cuisine: String, avgPrice: Double? = nil) {
-        self.name = name
-        self.location = location
-        self.hours = hours
-        self.cuisine = cuisine
-        self.avgPrice = avgPrice
+    enum CodingKeys: String, CodingKey {
+        case id, name, latitude, longitude, hours, averagePrice, category, isFavorite
+    }
+
+    // Initializer from Decoder
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        let latitude = try container.decode(CLLocationDegrees.self, forKey: .latitude)
+        let longitude = try container.decode(CLLocationDegrees.self, forKey: .longitude)
+        location = CLLocation(latitude: latitude, longitude: longitude)
+        hours = try container.decode(String.self, forKey: .hours)
+        averagePrice = try container.decode(Double.self, forKey: .averagePrice)
+        category = try container.decode(String.self, forKey: .category)
+        isFavorite = try container.decode(Bool.self, forKey: .isFavorite)
+    }
+
+    // Encode function to Encoder
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(location.coordinate.latitude, forKey: .latitude)
+        try container.encode(location.coordinate.longitude, forKey: .longitude)
+        try container.encode(hours, forKey: .hours)
+        try container.encode(averagePrice, forKey: .averagePrice)
+        try container.encode(category, forKey: .category)
+        try container.encode(isFavorite, forKey: .isFavorite)
     }
 }
