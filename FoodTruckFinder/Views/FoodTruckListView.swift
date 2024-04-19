@@ -10,8 +10,8 @@ import CoreLocation
 
 struct FoodTruckListView: View {
     @ObservedObject var viewModel: FoodTruckViewModel
-        @Binding var searchText: String
-        var userLocation: CLLocation?
+    @Binding var searchText: String
+    var userLocation: CLLocation?
 
     var filteredFoodTrucks: [FoodTruck] {
         viewModel.foodTrucks.filter { truck in
@@ -27,14 +27,13 @@ struct FoodTruckListView: View {
 
     var body: some View {
         List(filteredFoodTrucks) { truck in
-            FoodTruckRow(truck: truck)
+            FoodTruckRow(viewModel: viewModel, truck: truck)
         }
     }
 }
 
 struct FoodTruckListView_Previews: PreviewProvider {
     static var previews: some View {
-        // Create a mock viewModel
         let viewModel = FoodTruckViewModel()
         viewModel.foodTrucks = [
             FoodTruck(
@@ -44,23 +43,12 @@ struct FoodTruckListView_Previews: PreviewProvider {
                 hours: "10am - 9pm",
                 averagePrice: 8.50,
                 category: "Japanese Cuisine",
-                isFavorite: false
-            ),
-            FoodTruck(
-                id: UUID(),
-                name: "Burger Haven",
-                location: CLLocation(latitude: 40.7128, longitude: -74.0060),
-                hours: "11am - 11pm",
-                averagePrice: 10.00,
-                category: "Fast Food",
                 isFavorite: true
-            )
+            ),
+            // Add more FoodTruck instances if needed
         ]
 
-        // Create a binding for searchText using .constant
         let searchText = Binding.constant("")
-
-        // Optional: Provide a user location for preview
         let userLocation = CLLocation(latitude: 34.0522, longitude: -118.2437)
 
         return FoodTruckListView(viewModel: viewModel, searchText: searchText, userLocation: userLocation)

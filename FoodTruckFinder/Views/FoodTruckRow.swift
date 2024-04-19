@@ -32,10 +32,8 @@ struct FoodTruckRow: View {
 
 struct FoodTruckRow_Previews: PreviewProvider {
     static var previews: some View {
-        // Create a mock instance of FoodTruckViewModel
         let viewModel = FoodTruckViewModel()
-        
-        // Add a sample truck to the viewModel
+
         viewModel.foodTrucks.append(FoodTruck(
             name: "Tasty Truck",
             location: CLLocation(latitude: 35.6895, longitude: 139.6917),
@@ -45,9 +43,14 @@ struct FoodTruckRow_Previews: PreviewProvider {
             isFavorite: true
         ))
 
-        if let sampleTruck = viewModel.foodTrucks.first {
-            FoodTruckRow(viewModel: viewModel, truck: sampleTruck)
-                .previewLayout(.sizeThatFits)
+        // Return a FoodTruckRow view if a sample truck is available, otherwise return a placeholder Text view.
+        return Group {
+            if let sampleTruck = viewModel.foodTrucks.first {
+                FoodTruckRow(viewModel: viewModel, truck: sampleTruck)
+            } else {
+                Text("No food trucks available for preview.")
+            }
         }
+        .previewLayout(.sizeThatFits)
     }
 }

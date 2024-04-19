@@ -25,10 +25,13 @@ class FoodTruckViewModel: ObservableObject {
     func saveFoodTrucks() {
     }
 
-    func toggleFavorite(_ truck: FoodTruck) {
-        if let index = foodTrucks.firstIndex(where: { $0.id == truck.id }) {
-            foodTrucks[index].isFavorite.toggle()
-            saveFoodTrucks()
+    class FoodTruckViewModel: ObservableObject {
+        @Published var foodTrucks: [FoodTruck] = []
+
+        func toggleFavorite(_ truck: FoodTruck) {
+            if let index = foodTrucks.firstIndex(where: { $0.id == truck.id }) {
+                foodTrucks[index].isFavorite.toggle()
+            }
         }
     }
 }
