@@ -16,6 +16,9 @@ class FoodTruckViewModel: ObservableObject {
 
     func addFoodTruck(_ truck: FoodTruck) {
         foodTrucks.append(truck)
+        if truck.isFavorite {
+            favorites.append(truck)
+        }
         saveFoodTrucks()
     }
 
@@ -28,7 +31,7 @@ class FoodTruckViewModel: ObservableObject {
             hours: "9 AM to 5 PM except Weekends",
             averagePrice: 10.0,
             category: "Chinese",
-            isFavorite: false
+            isFavorite: true
         )
         let sampleTruck2 = FoodTruck(
             name: "Halal Food Truck",
@@ -47,9 +50,9 @@ class FoodTruckViewModel: ObservableObject {
     }
     
     func toggleFavorite(_ truck: FoodTruck) {
-            if let index = foodTrucks.firstIndex(where: { $0.id == truck.id }) {
-                foodTrucks[index].isFavorite.toggle()
-                saveFoodTrucks()
-            }
+        if let index = foodTrucks.firstIndex(where: { $0.id == truck.id }) {
+            foodTrucks[index].isFavorite.toggle()
+            saveFoodTrucks()
         }
+    }
 }

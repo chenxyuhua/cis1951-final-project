@@ -13,10 +13,13 @@ struct FavoritesView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.foodTrucks.filter { $0.isFavorite }) { truck in
+            List(viewModel.favorites) { truck in
                 FoodTruckRow(viewModel: viewModel, truck: truck)
             }
             .navigationTitle("My Favorites")
+        }
+        .onAppear {
+            viewModel.loadFoodTrucks()
         }
     }
 }

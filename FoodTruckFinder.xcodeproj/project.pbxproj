@@ -93,14 +93,14 @@
 		BC4A81F92BCCC57900EA7233 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				160F5AD82BD2EC6A00CC0253 /* ContentView.swift */,
 				BC4A81FE2BCCC9CE00EA7233 /* HomeView.swift */,
+				BC4A82022BCCCA2000EA7233 /* SearchView.swift */,
+				BC4A82062BCCCA6000EA7233 /* FavoritesView.swift */,
+				BC4A82042BCCCA3300EA7233 /* CreateView.swift */,
 				BC4A82002BCCC9EA00EA7233 /* FoodTruckView.swift */,
 				94856A162BD2BDBB00C7977F /* FoodTruckListView.swift */,
 				94856A182BD2BE3900C7977F /* FoodTruckRow.swift */,
-				BC4A82022BCCCA2000EA7233 /* SearchView.swift */,
-				BC4A82042BCCCA3300EA7233 /* CreateView.swift */,
-				BC4A82062BCCCA6000EA7233 /* FavoritesView.swift */,
-				160F5AD82BD2EC6A00CC0253 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
