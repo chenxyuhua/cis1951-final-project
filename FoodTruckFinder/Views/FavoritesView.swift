@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct FavoritesView: View {
-    @EnvironmentObject var viewModel: FoodTruckViewModel
+    @ObservedObject var viewModel = FoodTruckViewModel()
 
     var body: some View {
         NavigationView {
