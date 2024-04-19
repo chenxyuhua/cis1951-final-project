@@ -10,6 +10,7 @@ import SwiftUI
 struct FoodTruckFinderApp: App {
     var body: some Scene {
         WindowGroup {
+            ContentView()
         }
     }
 }
