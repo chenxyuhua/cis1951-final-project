@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var foodTruckViewModel = FoodTruckViewModel()
+    @ObservedObject var locationManager = LocationManager()
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
@@ -22,7 +23,7 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            SearchView()
+            SearchView(viewModel: foodTruckViewModel)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
@@ -32,7 +33,7 @@ struct ContentView: View {
                     Label("Favorites", systemImage: "star.fill")
                 }
             
-            CreateView()
+            CreateView(viewModel: foodTruckViewModel, locationService: locationManager)
                 .tabItem {
                     Label("Add", systemImage: "plus.circle.fill")
                 }

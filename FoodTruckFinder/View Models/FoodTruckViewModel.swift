@@ -45,14 +45,11 @@ class FoodTruckViewModel: ObservableObject {
     // Saves food trucks to persistent storage
     func saveFoodTrucks() {
     }
-
-    class FoodTruckViewModel: ObservableObject {
-        @Published var foodTrucks: [FoodTruck] = []
-
-        func toggleFavorite(_ truck: FoodTruck) {
+    
+    func toggleFavorite(_ truck: FoodTruck) {
             if let index = foodTrucks.firstIndex(where: { $0.id == truck.id }) {
                 foodTrucks[index].isFavorite.toggle()
+                saveFoodTrucks()
             }
         }
-    }
 }
