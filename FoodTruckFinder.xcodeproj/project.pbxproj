@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160F5AD72BD2BDDF00CC0253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F5AD62BD2BDDF00CC0253 /* ViewController.swift */; };
+		160F5AD92BD2EC6A00CC0253 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F5AD82BD2EC6A00CC0253 /* ContentView.swift */; };
 		BC4A81EC2BCCC4A400EA7233 /* FoodTruckFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A81EB2BCCC4A400EA7233 /* FoodTruckFinderApp.swift */; };
 		BC4A81F02BCCC4A500EA7233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4A81EF2BCCC4A500EA7233 /* Assets.xcassets */; };
 		BC4A81F32BCCC4A500EA7233 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4A81F22BCCC4A500EA7233 /* Preview Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160F5AD62BD2BDDF00CC0253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		160F5AD82BD2EC6A00CC0253 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC4A81E82BCCC4A400EA7233 /* FoodTruckFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTruckFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4A81EB2BCCC4A400EA7233 /* FoodTruckFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckFinderApp.swift; sourceTree = "<group>"; };
 		BC4A81EF2BCCC4A500EA7233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 		BC4A81EA2BCCC4A400EA7233 /* FoodTruckFinder */ = {
 			isa = PBXGroup;
 			children = (
+				160F5AD62BD2BDDF00CC0253 /* ViewController.swift */,
 				BC4A81FB2BCCC58B00EA7233 /* View Models */,
 				BC4A81FA2BCCC58200EA7233 /* Models */,
 				BC4A81F92BCCC57900EA7233 /* Views */,
@@ -92,6 +97,7 @@
 				BC4A82022BCCCA2000EA7233 /* SearchView.swift */,
 				BC4A82042BCCCA3300EA7233 /* CreateView.swift */,
 				BC4A82062BCCCA6000EA7233 /* FavoritesView.swift */,
+				160F5AD82BD2EC6A00CC0253 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,8 +191,10 @@
 				BC4A82092BCCCA8B00EA7233 /* FoodTruckViewModel.swift in Sources */,
 				BC4A82032BCCCA2000EA7233 /* SearchView.swift in Sources */,
 				BC4A81FF2BCCC9CE00EA7233 /* HomeView.swift in Sources */,
+				160F5AD72BD2BDDF00CC0253 /* ViewController.swift in Sources */,
 				BC4A81EC2BCCC4A400EA7233 /* FoodTruckFinderApp.swift in Sources */,
 				BC4A82012BCCC9EA00EA7233 /* FoodTruckView.swift in Sources */,
+				160F5AD92BD2EC6A00CC0253 /* ContentView.swift in Sources */,
 				BC4A82072BCCCA6000EA7233 /* FavoritesView.swift in Sources */,
 				BC4A82052BCCCA3300EA7233 /* CreateView.swift in Sources */,
 				BC4A81FD2BCCC98A00EA7233 /* FoodTruck.swift in Sources */,
