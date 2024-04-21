@@ -10,15 +10,6 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-// For testing purposes
-struct FoodTruckView2: View {
-    var foodTruck: FoodTruck
-    
-    var body: some View {
-        Text(foodTruck.name)
-    }
-}
-
 struct HomeView: View {
     
     @ObservedObject var viewModel: FoodTruckViewModel
@@ -31,7 +22,7 @@ struct HomeView: View {
         NavigationView {
             Map(coordinateRegion: $region, annotationItems: viewModel.foodTrucks) { truck in
                 MapAnnotation(coordinate: truck.location.coordinate) {
-                    NavigationLink(destination: FoodTruckView2(foodTruck: truck)) {
+                    NavigationLink(destination: FoodTruckView(foodTruck: truck)) {
                         VStack {
                             Image(systemName: "mappin")
                                 .resizable()
