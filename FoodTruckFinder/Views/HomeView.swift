@@ -51,6 +51,11 @@ struct HomeView: View {
                 viewModel.loadFoodTrucks()
             }
         }
+        .onReceive(viewModel.$userLocation) { location in
+           if let location = location {
+               region.center = location
+           }
+       }
     }
 }
 

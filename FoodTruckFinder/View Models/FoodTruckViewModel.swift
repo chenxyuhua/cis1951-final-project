@@ -10,11 +10,19 @@ import Combine
 import MapKit
 import CoreLocation
 
-class FoodTruckViewModel: ObservableObject {
+class FoodTruckViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var foodTrucks: [FoodTruck] = []
+    @Published var userLocation: CLLocationCoordinate2D?
+    private var locationManager = CLLocationManager()
     
-    init() {
+    override init() {
+        super.init()
         loadFoodTrucks()
+        self.locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     // Adds a new food truck
