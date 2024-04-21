@@ -18,12 +18,11 @@ struct FoodTruckRow: View {
                 Text(truck.name).font(.headline)
             }
             Spacer()
-            Button(action: {
-                viewModel.toggleFavorite(truck)
-            }) {
-                Image(systemName: truck.isFavorite ? "heart.fill" : "heart")
-                    .foregroundColor(truck.isFavorite ? .red : .gray)
-            }
+            Image(systemName: truck.isFavorite ? "heart.fill" : "heart")
+                .foregroundColor(truck.isFavorite ? .red : .gray)
+                .onTapGesture {
+                    viewModel.toggleFavorite(truck)
+                }
         }
     }
 }

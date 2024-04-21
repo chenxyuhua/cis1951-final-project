@@ -52,6 +52,9 @@ struct SearchView: View {
                 userLocation: locationManager.location
             )
         }
+//        .gesture(TapGesture().onEnded {
+//            self.hideKeyboard()
+//        })
     }
 }
 
