@@ -13,31 +13,55 @@ struct FoodTruckView: View {
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 20) {
-                Text("Hours: \(foodTruck.hours)")
-                Text("Category: \(foodTruck.category)")
-                Text("Average Price: $\(foodTruck.averagePrice, specifier: "%.2f")")
+            VStack(alignment: .leading, spacing: 10) {
+                Group {
+                    HStack {
+                        Text("Hours:")
+                            .bold()
+                        Text(foodTruck.hours)
+                    }
 
-                Text("Location:")
-                Text("Latitude: \(foodTruck.location.coordinate.latitude)")
-                Text("Longitude: \(foodTruck.location.coordinate.longitude)")
+                    HStack {
+                        Text("Category:")
+                            .bold()
+                        Text(foodTruck.category)
+                    }
 
+                    HStack {
+                        Text("Average Price:")
+                            .bold()
+                        Text("$\(foodTruck.averagePrice, specifier: "%.2f")")
+                    }
+                    
+                    HStack {
+                        Text("Favorite:")
+                            .bold()
+                        if foodTruck.isFavorite {
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                        } else {
+                            Image(systemName: "heart")
+                        }
+                    }
+
+                    Text("Location:")
+                        .bold()
+                    HStack {
+                        Text("Latitude:")
+                            .bold()
+                        Text("\(foodTruck.location.coordinate.latitude)")
+                    }
+                    
+                    HStack {
+                        Text("Longitude:")
+                            .bold()
+                        Text("\(foodTruck.location.coordinate.longitude)")
+                    }
+                }
                 Spacer()
             }
-            .padding(.horizontal, 0)
-            .navigationBarTitle(Text("\(foodTruck.name)"), displayMode: .inline)
-            .navigationBarItems(leading: backButton)
-        }
-    }
-
-    private var backButton: some View {
-        Button(action: {
-            // Actions to pop to the previous view will be handled by the navigation view.
-        }) {
-            HStack {
-                Image(systemName: "arrow.left")
-                Text("Back")
-            }
+            .padding([.leading, .top, .bottom])
+            .navigationBarTitle(Text(foodTruck.name), displayMode: .inline)
         }
     }
 }
