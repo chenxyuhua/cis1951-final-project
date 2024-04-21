@@ -17,8 +17,8 @@ struct CreateView: View {
     @State private var averagePrice: String = ""
     @State private var category: String = ""
     @State private var isFavorite: Bool = false
-    @State private var latitude: CLLocationDegrees = 0.0
-    @State private var longitude: CLLocationDegrees = 0.0
+    @State private var latitude: CLLocationDegrees?
+    @State private var longitude: CLLocationDegrees?
     @State private var showAlert = false
     @State private var alertMessage = ""
 
@@ -34,9 +34,9 @@ struct CreateView: View {
                 Section() {
                     TextField("Name", text: $name)
                     TextField("Hours", text: $hours)
-                    TextField("Category", text: $category)
                     TextField("Average Price", text: $averagePrice)
                         .keyboardType(.decimalPad)
+                    TextField("Category", text: $category)
                     HStack {
                         Text("Favorite")
                         Spacer()
@@ -46,16 +46,18 @@ struct CreateView: View {
                                 isFavorite.toggle()
                             }
                     }
-                    Section(header: Text("Location")) {
-                        Text("Latitude: \(latitude)")
-                        Text("Longitude: \(longitude)")
+                    if let latitude = latitude, let longitude = longitude {
+                        Text("Latitude: \(latitude, specifier: "%.2f")")
+                        Text("Longitude: \(longitude, specifier: "%.2f")")
+                    } else {
+                        Text("Fetching location...")
                     }
                 }
                 
                 Button("Done") {
                     if validateFields() {
                         if let averagePriceDouble = Double(averagePrice) {
-                            let newLocation = CLLocation(latitude: latitude, longitude: longitude)
+                            let newLocation = CLLocation(latitude: latitude ?? 0, longitude: longitude ?? 0)
                             let newTruck = FoodTruck(name: name, location: newLocation, hours: hours, averagePrice: averagePriceDouble, category: category, isFavorite: isFavorite)
                             viewModel.addFoodTruck(newTruck)
                             
@@ -84,11 +86,25 @@ struct CreateView: View {
         .tabItem {
             Label("Create", systemImage: "plus.circle.fill")
         }
+        .onAppear {
+            fetchUserLocation()
+        }
     }
     
     // Validation function for form fields
     private func validateFields() -> Bool {
         return !name.isEmpty && !hours.isEmpty && !category.isEmpty && !averagePrice.isEmpty
+    }
+    
+    private func fetchUserLocation() {
+        // Ensure the location service is authorized and ready
+        locationService.requestLocationPermission()
+        
+        // Asynchronously fetch the current location
+        DispatchQueue.main.async {
+            self.latitude = locationService.location?.coordinate.latitude
+            self.longitude = locationService.location?.coordinate.longitude
+        }
     }
 }
 

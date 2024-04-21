@@ -16,17 +16,14 @@ struct FoodTruckRow: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(truck.name).font(.headline)
-                // More information about the food truck could be added here
             }
             Spacer()
-            Button(action: {
-                viewModel.toggleFavorite(truck)
-            }) {
-                Image(systemName: truck.isFavorite ? "heart.fill" : "heart")
-                    .foregroundColor(truck.isFavorite ? .red : .gray)
-            }
+            Image(systemName: truck.isFavorite ? "heart.fill" : "heart")
+                .foregroundColor(truck.isFavorite ? .red : .gray)
+                .onTapGesture {
+                    viewModel.toggleFavorite(truck)
+                }
         }
-        // Add any styling modifiers to style the row here.
     }
 }
 
