@@ -19,6 +19,8 @@ struct CreateView: View {
     @State private var isFavorite: Bool = false
     @State private var latitude: CLLocationDegrees = 0.0
     @State private var longitude: CLLocationDegrees = 0.0
+    @State private var showAlert = false
+    @State private var alertMessage = ""
 
     var body: some View {
         VStack {
@@ -51,10 +53,26 @@ struct CreateView: View {
                 }
                 
                 Button("Done") {
-                    if let averagePriceDouble = Double(averagePrice) {
-                        let newLocation = CLLocation(latitude: latitude, longitude: longitude)
-                        let newTruck = FoodTruck(name: name, location: newLocation, hours: hours, averagePrice: averagePriceDouble, category: category, isFavorite: isFavorite)
-                        viewModel.addFoodTruck(newTruck)
+                    if validateFields() {
+                        if let averagePriceDouble = Double(averagePrice) {
+                            let newLocation = CLLocation(latitude: latitude, longitude: longitude)
+                            let newTruck = FoodTruck(name: name, location: newLocation, hours: hours, averagePrice: averagePriceDouble, category: category, isFavorite: isFavorite)
+                            viewModel.addFoodTruck(newTruck)
+                            
+                            // Reset field values
+                            name = ""
+                            hours = ""
+                            category = ""
+                            averagePrice = ""
+                            isFavorite = false
+                            latitude = 0.0
+                            longitude = 0.0
+                            alertMessage = "Food Truck Created!"
+                            showAlert = true
+                        }
+                    } else {
+                        alertMessage = "Please fill in all required fields"
+                        showAlert = true
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -63,9 +81,17 @@ struct CreateView: View {
 //        .onAppear {
 //            locationService.startLocationServices()
 //        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Notification"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
         .tabItem {
             Label("Create", systemImage: "plus.circle.fill")
         }
+    }
+    
+    // Validation function for form fields
+    private func validateFields() -> Bool {
+        return !name.isEmpty && !hours.isEmpty && !category.isEmpty && !averagePrice.isEmpty
     }
 }
 
