@@ -16,7 +16,6 @@ struct FoodTruckRow: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(truck.name).font(.headline)
-                // More information about the food truck could be added here
             }
             Spacer()
             Button(action: {
@@ -26,7 +25,6 @@ struct FoodTruckRow: View {
                     .foregroundColor(truck.isFavorite ? .red : .gray)
             }
         }
-        // Add any styling modifiers to style the row here.
     }
 }
 
