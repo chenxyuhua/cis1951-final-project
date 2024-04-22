@@ -45,18 +45,16 @@ struct FoodTruckView: View {
                         }
                     }
 
-                    Text("Location:")
-                        .bold()
                     HStack {
                         Text("Latitude:")
                             .bold()
-                        Text("\(foodTruck.location.coordinate.latitude)")
+                        Text("\(foodTruck.location.coordinate.latitude, specifier: "%.2f")")
                     }
                     
                     HStack {
                         Text("Longitude:")
                             .bold()
-                        Text("\(foodTruck.location.coordinate.longitude)")
+                        Text("\(foodTruck.location.coordinate.longitude, specifier: "%.2f")")
                     }
                     
                     Spacer()
