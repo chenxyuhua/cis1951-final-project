@@ -73,7 +73,6 @@
 		BC4A81EA2BCCC4A400EA7233 /* FoodTruckFinder */ = {
 			isa = PBXGroup;
 			children = (
-				160F5ADD2BD610BA00CC0253 /* UIApplicationExtension.swift */,
 				BC4A81FB2BCCC58B00EA7233 /* View Models */,
 				BC4A81FA2BCCC58200EA7233 /* Models */,
 				BC4A81F92BCCC57900EA7233 /* Views */,
@@ -104,6 +103,7 @@
 				BC4A82002BCCC9EA00EA7233 /* FoodTruckView.swift */,
 				94856A162BD2BDBB00C7977F /* FoodTruckListView.swift */,
 				94856A182BD2BE3900C7977F /* FoodTruckRow.swift */,
+				160F5ADD2BD610BA00CC0253 /* UIApplicationExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckFinder/Preview Content\"";
-				DEVELOPMENT_TEAM = 76ZZ4QH46R;
+				DEVELOPMENT_TEAM = FC47US8TKH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to show you nearby food trucks!";
@@ -355,7 +355,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest123;
+				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -371,7 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckFinder/Preview Content\"";
-				DEVELOPMENT_TEAM = 76ZZ4QH46R;
+				DEVELOPMENT_TEAM = FC47US8TKH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to show you nearby food trucks!";
@@ -386,7 +386,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest123;
+				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

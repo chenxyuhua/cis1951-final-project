@@ -22,7 +22,7 @@ struct HomeView: View {
         NavigationView {
             Map(coordinateRegion: $region, annotationItems: viewModel.foodTrucks) { truck in
                 MapAnnotation(coordinate: truck.location.coordinate) {
-                    NavigationLink(destination: FoodTruckView(foodTruck: truck)) {
+                    NavigationLink(destination: FoodTruckView(viewModel: viewModel, foodTruck: truck)) {
                         VStack {
                             Image(systemName: "mappin")
                                 .resizable()

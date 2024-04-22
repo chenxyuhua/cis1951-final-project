@@ -9,6 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct FoodTruckView: View {
+    @ObservedObject var viewModel: FoodTruckViewModel
     let foodTruck: FoodTruck
 
     var body: some View {
@@ -44,21 +45,32 @@ struct FoodTruckView: View {
                         }
                     }
 
-                    Text("Location:")
-                        .bold()
                     HStack {
                         Text("Latitude:")
                             .bold()
-                        Text("\(foodTruck.location.coordinate.latitude)")
+                        Text("\(foodTruck.location.coordinate.latitude, specifier: "%.2f")")
                     }
                     
                     HStack {
                         Text("Longitude:")
                             .bold()
-                        Text("\(foodTruck.location.coordinate.longitude)")
+                        Text("\(foodTruck.location.coordinate.longitude, specifier: "%.2f")")
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        viewModel.deleteFoodTruck(foodTruck)
+                    }) {
+                        Text("Remove Food Truck")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.red)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
                     }
                 }
-                Spacer()
             }
             .padding([.leading, .top, .bottom])
             .navigationBarTitle(Text(foodTruck.name), displayMode: .inline)
@@ -84,7 +96,7 @@ extension FoodTruck {
 // Update the preview provider for FoodTruckView
 struct FoodTruckView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodTruckView(foodTruck: .mock)
+        FoodTruckView(viewModel: FoodTruckViewModel(), foodTruck: .mock)
     }
 }
 
