@@ -31,6 +31,14 @@ class FoodTruckViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         saveFoodTrucks()
     }
     
+    // Deletes a food truck
+    func deleteFoodTruck(_ truck: FoodTruck) {
+        if let index = foodTrucks.firstIndex(where: { $0.id == truck.id }) {
+            foodTrucks.remove(at: index)
+            saveFoodTrucks()
+        }
+    }
+    
     // Saves food trucks to persistent storage
     func saveFoodTrucks() {
         if let data = try? JSONEncoder().encode(foodTrucks) {
