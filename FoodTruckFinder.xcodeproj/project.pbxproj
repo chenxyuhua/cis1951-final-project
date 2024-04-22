@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		160F5AD92BD2EC6A00CC0253 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F5AD82BD2EC6A00CC0253 /* ContentView.swift */; };
+		160F5ADE2BD610BA00CC0253 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F5ADD2BD610BA00CC0253 /* UIApplicationExtension.swift */; };
 		94856A132BD2BCFE00C7977F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94856A122BD2BCFE00C7977F /* LocationManager.swift */; };
 		94856A172BD2BDBB00C7977F /* FoodTruckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94856A162BD2BDBB00C7977F /* FoodTruckListView.swift */; };
 		94856A192BD2BE3900C7977F /* FoodTruckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94856A182BD2BE3900C7977F /* FoodTruckRow.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		160F5AD82BD2EC6A00CC0253 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		160F5ADD2BD610BA00CC0253 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		94856A122BD2BCFE00C7977F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		94856A162BD2BDBB00C7977F /* FoodTruckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckListView.swift; sourceTree = "<group>"; };
 		94856A182BD2BE3900C7977F /* FoodTruckRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckRow.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		BC4A81EA2BCCC4A400EA7233 /* FoodTruckFinder */ = {
 			isa = PBXGroup;
 			children = (
+				160F5ADD2BD610BA00CC0253 /* UIApplicationExtension.swift */,
 				BC4A81FB2BCCC58B00EA7233 /* View Models */,
 				BC4A81FA2BCCC58200EA7233 /* Models */,
 				BC4A81F92BCCC57900EA7233 /* Views */,
@@ -200,6 +203,7 @@
 				160F5AD92BD2EC6A00CC0253 /* ContentView.swift in Sources */,
 				BC4A82072BCCCA6000EA7233 /* FavoritesView.swift in Sources */,
 				BC4A82052BCCCA3300EA7233 /* CreateView.swift in Sources */,
+				160F5ADE2BD610BA00CC0253 /* UIApplicationExtension.swift in Sources */,
 				BC4A81FD2BCCC98A00EA7233 /* FoodTruck.swift in Sources */,
 				94856A132BD2BCFE00C7977F /* LocationManager.swift in Sources */,
 				94856A192BD2BE3900C7977F /* FoodTruckRow.swift in Sources */,
@@ -336,7 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckFinder/Preview Content\"";
-				DEVELOPMENT_TEAM = FC47US8TKH;
+				DEVELOPMENT_TEAM = 76ZZ4QH46R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to show you nearby food trucks!";
@@ -351,7 +355,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest;
+				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -367,7 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckFinder/Preview Content\"";
-				DEVELOPMENT_TEAM = FC47US8TKH;
+				DEVELOPMENT_TEAM = 76ZZ4QH46R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to show you nearby food trucks!";
@@ -382,7 +386,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest;
+				PRODUCT_BUNDLE_IDENTIFIER = yuhua.FoodTruckFinderTest123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

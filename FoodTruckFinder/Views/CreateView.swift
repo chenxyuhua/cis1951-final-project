@@ -89,6 +89,9 @@ struct CreateView: View {
         .onAppear {
             fetchUserLocation()
         }
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+        }
     }
     
     // Validation function for form fields
