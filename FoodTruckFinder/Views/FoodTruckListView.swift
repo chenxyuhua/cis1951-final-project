@@ -28,8 +28,14 @@ struct FoodTruckListView: View {
     }
 
     var body: some View {
-        List(filteredAndSortedFoodTrucks) { truck in
-            FoodTruckRow(viewModel: viewModel, truck: truck)
+        NavigationView {
+            List {
+                ForEach (filteredAndSortedFoodTrucks) { truck in
+                    NavigationLink(destination: FoodTruckView(viewModel: viewModel, foodTruck: truck)) {
+                        FoodTruckRow(viewModel: viewModel, truck: truck)
+                    }
+                }
+            }
         }
     }
 }

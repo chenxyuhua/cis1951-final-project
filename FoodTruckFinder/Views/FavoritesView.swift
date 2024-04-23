@@ -13,8 +13,12 @@ struct FavoritesView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.foodTrucks.filter { $0.isFavorite }) { truck in
-                FoodTruckRow(viewModel: viewModel, truck: truck)
+            List {
+                ForEach (viewModel.foodTrucks.filter { $0.isFavorite }) { truck in
+                    NavigationLink(destination: FoodTruckView(viewModel: viewModel, foodTruck: truck)) {
+                        FoodTruckRow(viewModel: viewModel, truck: truck)
+                    }
+                }
             }
             .navigationTitle("My Favorites")
         }
