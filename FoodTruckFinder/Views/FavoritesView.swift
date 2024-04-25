@@ -25,6 +25,9 @@ struct FavoritesView: View {
         .onAppear {
             viewModel.loadFoodTrucks()
         }
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+        }
     }
 }
 

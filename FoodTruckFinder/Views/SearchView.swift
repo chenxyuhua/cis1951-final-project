@@ -44,6 +44,8 @@ struct SearchView: View {
     @State private var searchText = ""
 
     var body: some View {
+//        scrollView.keyboardDismissMode = .onDrag
+
         VStack {
             SearchBar(text: $searchText)
             FoodTruckListView(

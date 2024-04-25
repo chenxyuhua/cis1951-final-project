@@ -21,6 +21,7 @@ struct CreateView: View {
     @State private var longitude: CLLocationDegrees?
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @FocusState private var buttonIsFocused: Bool
 
     var body: some View {
         VStack {
@@ -33,10 +34,14 @@ struct CreateView: View {
                 
                 Section() {
                     TextField("Name", text: $name)
+                        .focused($buttonIsFocused)
                     TextField("Hours", text: $hours)
+                        .focused($buttonIsFocused)
                     TextField("Average Price", text: $averagePrice)
                         .keyboardType(.decimalPad)
+                        .focused($buttonIsFocused)
                     TextField("Category", text: $category)
+                        .focused($buttonIsFocused)
                     HStack {
                         Text("Favorite")
                         Spacer()
@@ -55,6 +60,7 @@ struct CreateView: View {
                 }
                 
                 Button("Done") {
+                    buttonIsFocused = false
                     if validateFields() {
                         if let averagePriceDouble = Double(averagePrice) {
                             let newLocation = CLLocation(latitude: latitude ?? 0, longitude: longitude ?? 0)
@@ -88,9 +94,6 @@ struct CreateView: View {
         }
         .onAppear {
             fetchUserLocation()
-        }
-        .onTapGesture {
-            UIApplication.shared.endEditing()
         }
     }
     
