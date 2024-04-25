@@ -47,14 +47,17 @@ struct SearchView: View {
         ScrollView {
             VStack {
                 SearchBar(text: $searchText)
+                    .background(Color.clear)
                 FoodTruckListView(
                     viewModel: viewModel,
                     searchText: $searchText,
                     userLocation: locationManager.location
                 )
             }
+            .background(Color.clear)
         }
         .scrollDismissesKeyboard(.interactively)
+        .background(Color(UIColor.systemGroupedBackground))
     }
 }
 
