@@ -10,6 +10,7 @@ import CoreLocation
 
 struct FoodTruckView: View {
     @ObservedObject var viewModel: FoodTruckViewModel
+    @Environment(\.presentationMode) var presentationMode
     let foodTruck: FoodTruck
 
     var body: some View {
@@ -61,6 +62,7 @@ struct FoodTruckView: View {
                     
                     Button(action: {
                         viewModel.deleteFoodTruck(foodTruck)
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Remove Food Truck")
                             .foregroundColor(.white)

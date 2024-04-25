@@ -44,19 +44,17 @@ struct SearchView: View {
     @State private var searchText = ""
 
     var body: some View {
-//        scrollView.keyboardDismissMode = .onDrag
-
-        VStack {
-            SearchBar(text: $searchText)
-            FoodTruckListView(
-                viewModel: viewModel,
-                searchText: $searchText,
-                userLocation: locationManager.location
-            )
+        ScrollView {
+            VStack {
+                SearchBar(text: $searchText)
+                FoodTruckListView(
+                    viewModel: viewModel,
+                    searchText: $searchText,
+                    userLocation: locationManager.location
+                )
+            }
         }
-        .onTapGesture {
-            UIApplication.shared.endEditing()
-        }
+        .scrollDismissesKeyboard(.interactively)
     }
 }
 
